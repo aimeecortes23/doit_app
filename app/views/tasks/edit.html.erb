@@ -1,5 +1,5 @@
 <h1>
-  <%= form_for @task do |task| %>
+  <%= form_for :task, url: task_path(@task), method: :patch do |task| %>
     <%= task.text_field :title %>
     <%= task.submit %>
   <% end %>

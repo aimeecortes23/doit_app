@@ -1,0 +1,10 @@
+<% @subtasks.all.each do |subtask| %>
+  <p>
+    <%= subtask.title %>
+    <%= subtask.priority %>
+
+  </p>
+
+
+<% end %>
+<%= pluralize(@subtasks.count, "item") %>

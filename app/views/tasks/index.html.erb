@@ -1,14 +1,17 @@
+
+<div class="well well-lg">
+
+  <p><%= link_to "All", task_subtasks_path(:task_id) %></p>
+
+</div>
+
+
 <div class="container">
-
-
-
-
-
   <% @tasks.all.each do |task| %>
-
-
     <div class="well well-lg">
-      <p class="center"><%= link_to task.title, task_path(task) %></p>
+      <p class="center"><%= link_to task.title, task_path(task) %><br>
+          <%= pluralize(task.subtasks.count, "item") %>
+      </p>
       <p class="center">
         <%= link_to task, :method => :delete, data: {confirm: "Are you sure?"} do %>
           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
