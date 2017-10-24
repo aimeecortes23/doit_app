@@ -3,10 +3,14 @@ Rails.application.routes.draw do
 
 
 resources :tasks do
-  resources :subtasks 
+  resources :subtasks
 end
 
 root 'welcome#home'
+
+
+get 'signup', to: 'users#new'
+resources :users, except: [:new]
 
 
 end

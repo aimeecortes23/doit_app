@@ -17,6 +17,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.user = User.first
     @task.save
     redirect_to '/tasks'
   end
